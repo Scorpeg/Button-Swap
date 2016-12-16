@@ -17,8 +17,7 @@ static int keys_patched(int port, SceCtrlData *ctrl, int count) {
      ret = TAI_CONTINUE(int, ref_hook, port, ctrl, count);
 
      if ((ctrl->buttons & 0x6000) && ((ctrl->buttons & 0x6000) != 0x6000))
-     ctrl->buttons = ctrl->buttons ^ 0x6000;
-
+          ctrl->buttons = ctrl->buttons ^ 0x6000;
   }
   return ret;
 }
@@ -36,12 +35,10 @@ static int keys_patched2(int port, SceCtrlData *ctrl, int count) {
      ret = TAI_CONTINUE(int, ref_hook2, port, ctrl, count);
 
      if ((ctrl->buttons & 0x6000) && ((ctrl->buttons & 0x6000) != 0x6000))
-     ctrl->buttons = ctrl->buttons ^ 0x6000;
-
+          ctrl->buttons = ctrl->buttons ^ 0x6000;
   }
   return ret;
 }
-
 
 
 void _start() __attribute__ ((weak, alias ("module_start")));
